@@ -14,36 +14,37 @@ use Nette\Utils\Paginator;
  */
 class PkPaginator extends Paginator
 {
-  /** @var int */
-  private $itemsOnFirstPage = NULL;
+	/** @var int */
+	private $itemsOnFirstPage = NULL;
 
 
-  /**
-   * Sets the number of items to display on a first page.
-   *
-   * @param int $itemsOnFirstPage
-   * @return \PkPaginator
-   */
-  public function setItemsOnFirstPage($itemsOnFirstPage)
-  {
-    $this->itemsOnFirstPage = $itemsOnFirstPage;
+	/**
+	 * Sets the number of items to display on a first page.
+	 *
+	 * @param int $itemsOnFirstPage
+	 * @return \PkPaginator
+	 */
+	public function setItemsOnFirstPage($itemsOnFirstPage)
+	{
+		$this->itemsOnFirstPage = $itemsOnFirstPage;
 
-    return $this;
-  }
+		return $this;
+	}
 
 
 	/**
 	 * Returns the total number of pages.
+	 *
 	 * @return int|NULL
 	 */
 	public function getPageCount()
-  {
-    if (!$this->itemsOnFirstPage) {
-      return parent::getPageCount();
-    }
+	{
+		if (!$this->itemsOnFirstPage) {
+			return parent::getPageCount();
+		}
 
-    return $this->itemCount === NULL ? NULL : (int) ceil(1 + (($this->itemCount - $this->itemsOnFirstPage) / $this->itemsPerPage));
-  }
+		return $this->itemCount === NULL ? NULL : (int) ceil(1 + (($this->itemCount - $this->itemsOnFirstPage) / $this->itemsPerPage));
+	}
 
 
 }
