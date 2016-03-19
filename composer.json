@@ -1,0 +1,23 @@
+{
+	"name": "premekkoch/pkpaginator",
+	"description": "Nette Framework extended paginator with different items count on first page",
+	"type": "library",
+	"licence": ["MIT"],
+	"support": {
+		"email": "premek.koch@gmail.com"
+	},
+	"keywords": ["paginator", "nette"],
+	"authors": [
+		{
+			"name": "premekkoch",
+			"email": "premek.koch@gmail.com"
+		}
+	],
+    "require": {
+	    "php": ">=5.4",
+        "nette/utils": "^2.3"
+    },
+	"autoload": {
+		"psr-4": { "PremekKoch\\": "src/" }
+	}
+}
